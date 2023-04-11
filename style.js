@@ -17,7 +17,7 @@ let questions = [
 
         options : ["Abeokuta", "Ibadan", "Fiditi"],
 
-        answer : "Abuja",
+        answer : "Ibadan",
 
         optionChose : ""
     },
@@ -27,23 +27,52 @@ let questions = [
 
         options : ["Lagos", "Bayelsa", "Abuja"],
 
-        answer : "Abuja",
+        answer : "Lagos",
 
         optionChose : ""
     },
-    
+
     {
-        question : "What State in Nigeria is Ikeja located at?",
+        question : "What is the full meaning of HTML?",
 
-        options : ["Lagos", "Bayelsa", "Abuja"],
+        options : ["Hip Cascading Sheet Language", "Hypertext Markup Language", "High Extensible Markup Language"],
 
-        answer : "Abuja",
+        answer : "Hypertext Markup Language",
 
         optionChose : ""
     },
 
-    
-]
+    {
+        question : "___________ take place when you break down a function that takes multiple arguments into a series of functions that take part of the arguments?",
+
+        options : ["function Breakdown", "None of the above", "Currying"],
+
+        answer : "Currying",
+
+        optionChose : ""
+    },
+
+    {
+        question : "which of the following Nigerian Artist has 'Damola' in their names?",
+
+        options : ["Davido", "Ayra Star", "Fireboy"],
+
+        answer : "Fireboy",
+
+        optionChose : ""
+    },
+
+    {
+        question : "Which of the following product uses fruit as their trademark",
+
+        options : ["Apple", "Samsung", "Tekno"],
+
+        answer : "Apple",
+
+        optionChose : ""
+    },
+
+];
 
 
 
