@@ -1,4 +1,49 @@
+let index = 0;
+let display = document.getElementById('questionDisplay');
 
+let questions = [
+    {
+        question : "What is the capital of Nigeria?",
+
+        options : ["Lagos", "Ikeja", "Abuja"],
+
+        answer : "Abuja",
+
+        optionChose : ""
+    },
+
+    {
+        question : "What is the capital of Oyo?",
+
+        options : ["Abeokuta", "Ibadan", "Fiditi"],
+
+        answer : "Abuja",
+
+        optionChose : ""
+    },
+
+    {
+        question : "What State in Nigeria is Ikeja located at?",
+
+        options : ["Lagos", "Bayelsa", "Abuja"],
+
+        answer : "Abuja",
+
+        optionChose : ""
+    },
+    
+    {
+        question : "What State in Nigeria is Ikeja located at?",
+
+        options : ["Lagos", "Bayelsa", "Abuja"],
+
+        answer : "Abuja",
+
+        optionChose : ""
+    },
+
+    
+]
 
 
 
