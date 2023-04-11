@@ -74,6 +74,39 @@ let questions = [
 
 ];
 
+function show(){
+    display.innerHTML = `<h2>${questions[index].question}</h2>`;
+    questions[index].options.forEach(function (params, i) {
+        display.innerHTML += `<input type = "Radio" name = "answer" ${
+            questions[index].optionChose == params ? "checked" : ""
+        } onclick = "answer('${params}')"> ${params}</input> <br>`;
+    });
+
+    display.innerHTML += `<button class = " btn btn-danger" onclick = "previous()">Previous</button>
+                          <button class = " btn btn-danger" onclick = "next()">Next</button>
+                          <button class = " btn btn-danger" onclick = "submit()">Submit</button>`;
+
+    // btn.style.show = "none";
+}
+
+
+function start(){
+    show();
+}
+
+function next(){
+    if (questions[index + 1]){
+        index++;
+        show()
+    }
+}
+function previous(){
+    if (questions[index - 1]){
+        index--;
+        show()
+    }
+}
+
 
 
 
