@@ -86,26 +86,55 @@ function show(){
                           <button class = " btn btn-danger" onclick = "next()">Next</button>
                           <button class = " btn btn-danger" onclick = "submit()">Submit</button>`;
 
-    // btn.style.show = "none";
-}
+    btn.style.show = "none";
+};
 
 
 function start(){
     show();
-}
+};
 
 function next(){
     if (questions[index + 1]){
         index++;
         show()
-    }
-}
+    };
+};
+
 function previous(){
     if (questions[index - 1]){
         index--;
         show()
-    }
-}
+    };
+};
+
+function submit(){
+    let score;
+
+    score = questions.filter(function (pa) {
+
+        return pa.optionChose == pa.answer;
+
+    });
+
+    display.innerHTML = `<h2>  Your Score is ${score.length} ${questions.length}</h2>`;
+
+    display.innerHTML = `<h2> Your Score is ${
+        (score.length / questions.length) * 100
+    }`;
+// % <h2><button onclick='result()'> Show Result</button>
+    // clearTimeout(timer);
+};
+
+// function result(){
+//     questions.forEach(function(pa){
+//         clearTimeout(timer);
+//         table.innerHTML += 
+//         `<td>${pa.question}</td>
+//         <td>${pa.optionChose}</td>
+//         <td>${pa.answer}</td>`
+//     });
+// };
 
 
 
