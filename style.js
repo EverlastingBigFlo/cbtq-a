@@ -78,17 +78,30 @@ let questions = [
 
 
 function show(){
-    display.innerHTML = `<h2>${questions[index].question}</h2>`;
 
-    questions[index].options.forEach(function (params, i) {
-        display.innerHTML += `<input type = "Radio" name = "answer" ${
-            questions[index].optionChose == params ? "checked" : ""
-        } onclick = "answer('${params}')"> ${params}</input> <br>`;
-    });
+    // document.querySelector('#display')
 
-    display.innerHTML += `<button class = " btn btn-danger" onclick = "previous()">Previous</button>
-                          <button class = " btn btn-danger" onclick = "next()">Next</button>
-                          <button class = " btn btn-danger" onclick = "submit()">Submit</button>`;
+    display.innerHTML = '';
+
+    display.innerHTML += `<h2 class ="lead">${index+1}.${questions[index].question}</h2>`;
+    questions[index].options.forEach((el)=>{
+        display.innerHTML+= `<h2><input ${questions[index].optionChose==el? 'checked' :''} type="radio" name="answer" onclick="submit('${el}')">${el}</input></h2>`
+    })
+
+    let btns=document.querySelectorAll('.controls');
+
+    btns.forEach((el)=>el.addEventListener('click', myClick))
+
+
+    // questions[index].options.forEach(function (params, i) {
+    //     display.innerHTML += `<input type = "Radio" name = "answer" ${
+    //         questions[index].optionChose == params ? "checked" : ""
+    //     } onclick = "answer('${params}')"> ${params}</input> <br>`;
+    // });
+
+    // display.innerHTML += `<button class = " btn btn-danger" onclick = "previous()">Previous</button>
+    //                       <button class = " btn btn-danger" onclick = "next()">Next</button>
+    //                       <button class = " btn btn-danger" onclick = "submit()">Submit</button>`;
 
     // beg.style.show = 'none';
 };
@@ -99,44 +112,54 @@ function start(){
 
 };
 
+function myClick(event){
+    let forNext,forPrevious;
+    event.target.innerHTML == 'Next'?forNext = questions[index+1]:'';
+    forNext?index++:'';
+    event.target.innerHTML == 'Previous'?forPrevious = questions[index-1]:'';
+    forPrevious?index--:'';
+    show();
+}
+
 function answer(p){
     questions[index].optionChose = p;
 
     // console.log(questions);
 }
 
-function next(){
-    if (questions[index + 1]){
-        index++;
-        show()
-    };
-    console.log(questions);
-};
+function submit(element){
+    questions[index].optionChose = element
+}
 
-function previous(){
-    if (questions[index - 1]){
-        index--;
-        show()
-    };
-};
+// function next(){
+//     if (questions[index + 1]){
+//         index++;
+//         show()
+//     };
+//     console.log(questions);
+// };
 
-function submit(){
-    let score;
-display.innerHTML='';   
-    score = questions.filter(function (pa) {
+// function previous(){
+//     if (questions[index - 1]){
+//         index--;
+//         show()
+//     };
+// };
 
-        return pa.optionChose == pa.answer;
+// function submit(){
+//     let score;
+// display.innerHTML='';   
+//     score = questions.filter(function (pa) {
 
-    });
-    console.log(score);
+//         return pa.optionChose == pa.answer;
 
-    // display.innerHTML = `<h2>  Your Score is ${score.length} ${questions.length}</h2>`;
+//     });
+//     console.log(score);
 
-    display.innerHTML += `<h2> Your Score is ${
-        score.length / questions.length * 100}`;
-// % <h2><button onclick='result()'> Show Result</button>
-    // clearTimeout(timer);
-};
+
+//     display.innerHTML += `<h2> Your Score is ${
+//         score.length / questions.length * 100}`;
+// };
 
 
 
