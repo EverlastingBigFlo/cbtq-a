@@ -74,8 +74,12 @@ let questions = [
 
 ];
 
+
+
+
 function show(){
     display.innerHTML = `<h2>${questions[index].question}</h2>`;
+
     questions[index].options.forEach(function (params, i) {
         display.innerHTML += `<input type = "Radio" name = "answer" ${
             questions[index].optionChose == params ? "checked" : ""
@@ -86,19 +90,27 @@ function show(){
                           <button class = " btn btn-danger" onclick = "next()">Next</button>
                           <button class = " btn btn-danger" onclick = "submit()">Submit</button>`;
 
-    btn.style.show = "none";
+    // beg.style.show = 'none';
 };
 
 
 function start(){
     show();
+
 };
+
+function answer(p){
+    questions[index].optionChose = p;
+
+    // console.log(questions);
+}
 
 function next(){
     if (questions[index + 1]){
         index++;
         show()
     };
+    console.log(questions);
 };
 
 function previous(){
@@ -110,31 +122,22 @@ function previous(){
 
 function submit(){
     let score;
-
+display.innerHTML='';   
     score = questions.filter(function (pa) {
 
         return pa.optionChose == pa.answer;
 
     });
+    console.log(score);
 
-    display.innerHTML = `<h2>  Your Score is ${score.length} ${questions.length}</h2>`;
+    // display.innerHTML = `<h2>  Your Score is ${score.length} ${questions.length}</h2>`;
 
-    display.innerHTML = `<h2> Your Score is ${
-        (score.length / questions.length) * 100
-    }`;
+    display.innerHTML += `<h2> Your Score is ${
+        score.length / questions.length * 100}`;
 // % <h2><button onclick='result()'> Show Result</button>
     // clearTimeout(timer);
 };
 
-// function result(){
-//     questions.forEach(function(pa){
-//         clearTimeout(timer);
-//         table.innerHTML += 
-//         `<td>${pa.question}</td>
-//         <td>${pa.optionChose}</td>
-//         <td>${pa.answer}</td>`
-//     });
-// };
 
 
 
