@@ -92,17 +92,6 @@ function show(){
 
     btns.forEach((el)=>el.addEventListener('click', myClick))
 
-
-    // questions[index].options.forEach(function (params, i) {
-    //     display.innerHTML += `<input type = "Radio" name = "answer" ${
-    //         questions[index].optionChose == params ? "checked" : ""
-    //     } onclick = "answer('${params}')"> ${params}</input> <br>`;
-    // });
-
-    // display.innerHTML += `<button class = " btn btn-danger" onclick = "previous()">Previous</button>
-    //                       <button class = " btn btn-danger" onclick = "next()">Next</button>
-    //                       <button class = " btn btn-danger" onclick = "submit()">Submit</button>`;
-
     // beg.style.show = 'none';
 };
 
@@ -112,39 +101,27 @@ function start(){
 
 };
 
+// to next and previous the questions
 function myClick(event){
     let forNext,forPrevious;
     event.target.innerHTML == 'Next'?forNext = questions[index+1]:'';
     forNext?index++:'';
+
     event.target.innerHTML == 'Previous'?forPrevious = questions[index-1]:'';
     forPrevious?index--:'';
     show();
 }
 
+// to select answer
 function answer(p){
     questions[index].optionChose = p;
-
-    // console.log(questions);
 }
 
 function submit(element){
-    questions[index].optionChose = element
+    // questions[index].optionChose = element
+
+    let score = questions.filter((q) => q.optionChose == q.answer)
 }
-
-// function next(){
-//     if (questions[index + 1]){
-//         index++;
-//         show()
-//     };
-//     console.log(questions);
-// };
-
-// function previous(){
-//     if (questions[index - 1]){
-//         index--;
-//         show()
-//     };
-// };
 
 // function submit(){
 //     let score;
