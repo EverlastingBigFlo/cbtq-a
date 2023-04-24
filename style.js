@@ -13,11 +13,11 @@ let questions = [
     },
 
     {
-        question : "What is the capital of Oyo?",
+        question : "At a conference, 12 members shook hands with each other before & after the meeting. How many total number of hand shakes occurred?",
 
-        options : ["Abeokuta", "Ibadan", "Fiditi"],
+        options : ["100", "144", "132"],
 
-        answer : "Ibadan",
+        answer : "132",
 
         optionChose : ""
     },
