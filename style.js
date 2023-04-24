@@ -23,11 +23,11 @@ let questions = [
     },
 
     {
-        question : "What State in Nigeria is Ikeja located at?",
+        question : "The day after the day after tomorrow is four days before Monday. What day is it today?",
 
-        options : ["Lagos", "Bayelsa", "Abuja"],
+        options : ["Monday", "Friday", "Saturday"],
 
-        answer : "Lagos",
+        answer : "Monday",
 
         optionChose : ""
     },
