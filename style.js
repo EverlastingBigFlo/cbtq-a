@@ -33,11 +33,11 @@ let questions = [
     },
 
     {
-        question : "What is the full meaning of HTML?",
+        question : "Forest is to tree as tree is to ?",
 
-        options : ["Hip Cascading Sheet Language", "Hypertext Markup Language", "High Extensible Markup Language"],
+        options : ["plant", "leaf", "branch"],
 
-        answer : "Hypertext Markup Language",
+        answer : "leaf",
 
         optionChose : ""
     },
