@@ -97,6 +97,8 @@ function show(){
 
 
 function start(){
+    document.querySelector('#headerWrapper').innerHTML = '';
+    document.querySelector('#startWrappper').innerHTML = '';
     show();
 
 };
