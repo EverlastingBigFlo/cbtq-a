@@ -118,9 +118,7 @@ function answer(p){
 }
 
 function submit(element){
-    // questions[index].optionChose = element
-
-    let score = questions.filter((q) => q.optionChose == q.answer)
+ score = questions.filter((q) => q.optionChose == q.answer)
 }
 
 // function submit(){
