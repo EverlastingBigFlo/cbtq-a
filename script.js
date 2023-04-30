@@ -1,5 +1,6 @@
 let index = 0;
 let display = document.getElementById('questionDisplay');
+let score;
 
 let questions = [
     {
@@ -123,24 +124,13 @@ function submit(element){
  score = questions.filter((q) => q.optionChose == q.answer)
 }
 
-// function submit(){
-//     let score;
-// display.innerHTML='';   
-//     score = questions.filter(function (pa) {
+function showAnswer(){
+    display.innerHTML = '';
+    display.innerHTML += `Total score : ${score.length}/${questions.length}`
+    display.innerHTML += `<h3>percentage: ${score.length / questions.length * 100}%</h3> <br><br>
+    <button type="button" class="btn btn-primary" onclick="record()">preview </button><br>`
 
-//         return pa.optionChose == pa.answer;
-
-//     });
-//     console.log(score);
-
-
-//     display.innerHTML += `<h2> Your Score is ${
-//         score.length / questions.length * 100}`;
-// };
-
-
-
-
+}
 
 
 
