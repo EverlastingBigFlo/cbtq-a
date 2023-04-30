@@ -85,7 +85,7 @@ function show(){
 
     display.innerHTML += `<h2 class ="lead">${index+1}.${questions[index].question}</h2>`;
     questions[index].options.forEach((el)=>{
-        display.innerHTML+= `<h2><input ${questions[index].optionChose==el? 'checked' :''} type="radio" name="answer" onclick="submit('${el}')">${el}</input></h2>`
+        display.innerHTML+= `<h2 class="fs-5 text-danger d-flex gap-2 py-2"><input ${questions[index].optionChose==el? 'checked' :''} type="radio" name="answer" onclick="submit('${el}')">${el}</input></h2>`
     })
 
     let btns=document.querySelectorAll('.controls');
@@ -97,7 +97,7 @@ function show(){
 
 
 function start(){
-    document.querySelector('#headerWrapper').innerHTML = '';
+    // document.querySelector('#headerWrapper').innerHTML = '';
     document.querySelector('#startWrappper').innerHTML = '';
     show();
 
